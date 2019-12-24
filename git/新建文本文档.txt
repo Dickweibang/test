@@ -1,0 +1,29 @@
+常用Git命令
+
+查看文件当前状态：git status
+查看文件提交信息：git log
+将未被追踪的文件（工作区）提交至暂存区：git add (文件名)
+所有修改的文件提交至暂存区：git add 
+将暂存区文件提交至版本库：git commit -m "(描述)"
+跳过git add命令直接将工作区的文件提交到版本库：git commit -am "(描述)"
+
+查看git版本：git --version
+初始化git仓库：git init
+配置git：git config --global user.name (name)
+git config --global user.email (email)
+查看git的配置情况：git config --list
+
+Git中文件的4种状态
+untracked（Untracked commit）：未被追踪
+Modified：表示工作区修改了某个文件但是还没有添加到暂存区
+Staged：表示工作区修改的文件添加到了暂存区但是没有提交到版本库
+Committed：表示数据被安全的存储在本地库中
+
+Git的三层结构
+woking directory：工作区
+staging index：暂存区
+git directory(Repository)：版本库
+
+常用描述
+modify [文件名]：修改文件。
+add [文件名]：添加文件。
