@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="helloSpring" class="test.HelloSpring">
+		<property name="who">
+			<value>Spring</value>
+		</property>
+	</bean>
+	<bean id="rod" class="com01.Greeting" p:person="Rod" p:words="世界上有10种人，认识二进制的和不认识二进制的.">
+<!-- 		<property name="person"> -->
+<!-- 			<value>Rod</value> -->
+<!-- 		</property> -->
+<!-- 		<property name="words"> -->
+<!-- 			<value>世界上有10种人，认识二进制的和不认识二进制的.</value> -->
+<!-- 		</property> -->
+	</bean>
+	<bean id="zhangGa" class="com01.Greeting" p:person="张嘎" p:words="三天不打小鬼子，手都痒痒！">
+<!-- 		<property name="person"> -->
+<!-- 			<value>张嘎</value> -->
+<!-- 		</property> -->
+<!-- 		<property name="words"> -->
+<!-- 			<value>三天不打小鬼子，手都痒痒！</value> -->
+<!-- 		</property> -->
+	</bean>
+	<bean id="greetDao" class="com01.GreetDaoImpl">
+		<constructor-arg>
+			<ref bean="rod"></ref>
+		</constructor-arg>
+	</bean>
+	<bean id="greetDao2" class="com01.GreetDaoImpl">
+		<constructor-arg>
+			<ref bean="rod"></ref>
+		</constructor-arg>
+	</bean>
+	<bean id="greet" class="com01.GreetServiceImpl" p:greet-ref="greetDao">
+<!-- 		<constructor-arg> -->
+<!-- 			<ref bean="greetDao"></ref> -->
+<!-- 		</constructor-arg> -->
+	</bean>
+	<bean id="greet1" class="com01.GreetServiceImpl" p:greet-ref="greetDao2">
+<!-- 		<constructor-arg> -->
+<!-- 			<ref bean="zhangGa"></ref> -->
+<!-- 		</constructor-arg> -->
+	</bean>
+	<bean id="greet2" class="com01.Greeting">
+		<constructor-arg index="0">
+			<value>张嘎</value>
+		</constructor-arg>
+		<constructor-arg index="1">
+			<value>三天不打小鬼子，手都痒痒！</value>
+		</constructor-arg>
+	</bean>
+	<bean id="colorInk" class="test.ColorInk"></bean>
+	<bean id="greyInk" class="test.GreyInk"></bean>
+	<bean id="a4Paper" class="test.TextPaper">
+		<property name="charPerLine" value="10"/>
+		<property name="linePerPage" value="8"/>
+	</bean>
+	<bean id="b5paper" class="test.TextPaper">
+		<property name="charPerLine" value="6"/>
+		<property name="linePerPage" value="5"/>
+	</bean>
+	<bean id="printer" class="test.Printer">
+		<property name="ink" ref="greyInk"/>
+		<property name="paper" ref="a4Paper"/>
+	</bean>
+</beans>

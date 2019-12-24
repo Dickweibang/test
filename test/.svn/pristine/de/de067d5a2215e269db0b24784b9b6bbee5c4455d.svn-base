@@ -1,0 +1,17 @@
+svn实现原理：
+
+协同开发
+3个动作：
+checkout：
+可以通过checkout命令把svn上的项目下载到我们本地的计算机上
+update：
+把svn上的项目修改后的代码更新到本地，覆盖本身代码
+commit：
+提交本地项目到svn上
+
+启动svn服务
+a.命令行方式
+	svnserve -d -r E:\\svn
+
+b.注册系统方式（推荐）
+sc create mysvn binpath="E:\subversion\bin\svnserve.exe --service -r E:\\svn" start=auto depend= Tcpic
