@@ -1,0 +1,88 @@
+常用Git命令
+
+查看文件当前状态：git status
+查看文件提交信息：git log
+将未被追踪的文件（工作区）提交至暂存区：git add (文件名)
+所有修改的文件提交至暂存区：git add 
+将暂存区文件提交至版本库：git commit -m "(描述)"
+跳过git add命令直接将工作区的文件提交到版本库：git commit -am "(描述)"
+
+查看git版本：git --version
+初始化git仓库：git init常用Git命令
+查看文件当前状态：git status
+查看文件提交信息：git log
+将未被追踪的文件（工作区）提交至暂存区：git add (文件名)
+所有修改的文件提交至暂存区：git add 
+将暂存区文件提交至版本库：git commit -m "(描述)"
+跳过git add命令直接将工作区的文件提交到版本库：git commit -am "(描述)"
+
+查看git版本：git --version
+初始化git仓库：git init
+配置git：git config --global user.name (name)
+git config --global user.email (email)
+查看git的配置情况：git config --list
+
+Git中文件的4种状态
+untracked（Untracked commit）：未被追踪
+Modified：表示工作区修改了某个文件但是还没有添加到暂存区
+Staged：表示工作区修改的文件添加到了暂存区但是没有提交到版本库
+Committed：表示数据被安全的存储在本地库中
+
+Git的三层结构
+woking directory：工作区
+staging index：暂存区
+git directory(Repository)：版本库
+
+常用描述
+modify [文件名]：修改文件。
+add [文件名]：添加文件。
+配置git：git config --global user.name (name)
+git config --global user.email (email)
+查看git的配置情况：git config --list
+
+Git中文件的4种状态
+untracked（Untracked commit）：未被追踪
+Modified：表示工作区修改了某个文件但是还没有添加到暂存区
+Staged：表示工作区修改的文件添加到了暂存区但是没有提交到版本库
+Committed：表示数据被安全的存储在本地库中
+
+Git的三层结构
+woking directory：工作区
+staging index：暂存区
+git directory(Repository)：版本库
+
+常用描述
+modify [文件名]：修改文件。
+add [文件名]：添加文件。
+
+补充一个课程里没讲的知识平时常用的：git clean 命令  删除没有被跟踪的文件（
+untraced file）或文件夹的命令。git clean        
+后面接 -f 表示删除所有为跟踪的文件
+，  接-fd。表示删除所有未跟踪的文件和目录。 
+f-file；d-directory。
+
+
+查看分支：git branch
+
+
+常用远程仓库命令
+
+添加远程仓库地址名称：git remote add [名称,常用:origin] [远程仓库HTTPS链接]
+查看远程仓库地址名称：git remote –v
+拉取远程仓库：git pull [HTTPS链接或者SSH链接] [分支名]
+拉取远程仓库，但不合并：git fetch  [HTTPS链接或者SSH链接] [分支名]
+合并仓库：git merge  [HTTPS链接或者SSH链接] [分支名]
+git pull与git fetch区别：git fetch后，还要git merge，两步才相当于git pull.
+推送至远程仓库：git push [HTTPS链接或者SSH链接] [分支名]
+克隆远程仓库：git clone [HTTPS链接或者SSH链接] [分支名]git push
+比较远程仓库和本地仓库的差异：git diff origin/[分支名]
+
+生成SSH公钥：ssh-keygen
+帮助：git help
+绿色分支名和每个命令后面跟着的（通常为：master）即为当前分支。
+新建分支：git branch [分支名]
+切换分支：git checkout [分支名]
+删除分支：git branch -d [分支名]
+需要切换到另一个分支上面，才能删除这个分支。
+改变分支名称：git branch -m [需改变的分支名]  [新的分支名]
+创建新的分支并且切换到创建的分支上：git checkout -b [分支名] 

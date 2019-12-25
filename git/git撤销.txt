@@ -1,0 +1,8 @@
+1. 文件已经都提交了，通过 git status 查看也是干净的。
+2. 然后修改了文件，未添加，可以直接通过 git checkout -- filename 直接变回修改前。
+3. 也就是说，即使 commit 了。checkout 也可以拉取暂存区。
+4. 想变更为最后一次提交，在未添加的时候，可以直接使用 
+git checkout -- filename 拉取，不需要用 git reset HEAD -- filname 就可以，
+否则就要使用。如果是其他提交版本，则需要 git reset 版本号 -- filename， 
+然后再 git checkout -- filename ，
+再使用 git status 发现已经存在于暂存区，记得 commit。
